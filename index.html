@@ -3,55 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Anime Collection</title>
+    <title>Anime Collection Gallery</title>
+
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #111;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: #fff;
-            text-align: center;
         }
 
         header {
-            padding: 20px;
-            font-size: 2rem;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 2.2rem;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
             padding: 20px;
         }
 
-        img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .caption {
+            padding: 15px;
+            font-size: 1rem;
+            color: #ddd;
         }
 
         footer {
-            margin-top: 20px;
-            padding: 10px;
-            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px;
             color: #aaa;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <header>My Anime Collection</header>
+<header>🎴 My Anime Collection</header>
 
-    <div class="container">
-        <img src="20260327_082811.jpg" alt="Anime Collection">
+<section class="gallery">
+
+    <div class="card">
+        <img src="20260327_082811.jpg" alt="Anime Posters Collection">
+        <div class="caption">
+            Anime movie posters & merchandise collection
+        </div>
     </div>
 
-    <footer>
-        © 2026 My Collection Showcase
-    </footer>
+    <!-- Add more images like this -->
+    <!--
+    <div class="card">
+        <img src="image2.jpg" alt="Another item">
+        <div class="caption">Description here</div>
+    </div>
+    -->
+
+</section>
+
+<footer>
+    © 2026 My Anime Gallery
+</footer>
 
 </body>
 </html>
