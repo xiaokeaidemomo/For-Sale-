@@ -3,94 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Collection Gallery</title>
-
+    <title>Cyber Neon Pink Traffic Light</title>
     <style>
         body {
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
         }
-
-        header {
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 2.2rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+        
+        .traffic-light {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
         }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px;
+        
+        .light {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px;
+            transition: box-shadow 0.5s;
         }
-
-        .card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .card img {
-            width: 100%;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .card:hover img {
-            transform: scale(1.08);
-        }
-
-        .caption {
-            padding: 15px;
-            font-size: 1rem;
-            color: #ddd;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            color: #aaa;
-            font-size: 0.9rem;
+        
+        .pink {
+            background-color: #ff69b4;
         }
     </style>
 </head>
 <body>
-
-<header>🎴 My Anime Collection</header>
-
-<section class="gallery">
-
-    <div class="card">
-        <img src="20260327_082811.jpg" alt="Anime Posters Collection">
-        <div class="caption">
-            Anime movie posters & merchandise collection
-        </div>
+    <div class="traffic-light">
+        <div id="light1" class="light pink"></div>
+        <div id="light2" class="light pink"></div>
+        <div id="light3" class="light pink"></div>
     </div>
 
-    <!-- Add more images like this -->
-    <!--
-    <div class="card">
-        <img src="image2.jpg" alt="Another item">
-        <div class="caption">Description here</div>
-    </div>
-    -->
+    <script>
+        let lights = [
+            document.getElementById('light1'),
+            document.getElementById('light2'),
+            document.getElementById('light3')
+        ];
+        let currentLight = 0;
 
-</section>
+        document.addEventListener('click', () => {
+            lights[currentLight].style.boxShadow = 'none';
+            currentLight = (currentLight + 1) % lights.length;
+            lights[currentLight].style.boxShadow = '0 0 20px rgba(255, 105, 180, 0.5), 0 0 40px rgba(255, 105, 180, 0.3), 0 0 60px rgba(255, 105, 180, 0.1)';
+        });
 
-<footer>
-    © 2026 My Anime Gallery
-</footer>
-
+        // Initialize the first light
+        lights[currentLight].style.boxShadow = '0 0 20px rgba(255, 105, 180, 0.5), 0 0 40px rgba(255, 105, 180, 0.3), 0 0 60px rgba(255, 105, 180, 0.1)';
+    </script>
 </body>
 </html>
