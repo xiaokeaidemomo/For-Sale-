@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Neon Pink Traffic Light</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .traffic-light {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        
+        .light {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px;
+            transition: box-shadow 0.5s;
+        }
+        
+        .pink {
+            background-color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-light">
+        <div id="light1" class="light pink"></div>
+        <div id="light2" class="light pink"></div>
+        <div id="light3" class="light pink"></div>
+    </div>
+
+    <script>
+        let lights = [
+            document.getElementById('light1'),
+            document.getElementById('light2'),
+            document.getElementById('light3')
+        ];
+        let currentLight = 0;
+
+        document.addEventListener('click', () => {
+            lights[currentLight].style.boxShadow = 'none';
+            currentLight = (currentLight + 1) % lights.length;
+            lights[currentLight].style.boxShadow = '0 0 20px rgba(255, 105, 180, 0.5), 0 0 40px rgba(255, 105, 180, 0.3), 0 0 60px rgba(255, 105, 180, 0.1)';
+        });
+
+        // Initialize the first light
+        lights[currentLight].style.boxShadow = '0 0 20px rgba(255, 105, 180, 0.5), 0 0 40px rgba(255, 105, 180, 0.3), 0 0 60px rgba(255, 105, 180, 0.1)';
+    </script>
+</body>
+</html>
