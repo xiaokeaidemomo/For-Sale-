@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Cyber Traffic Light</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .traffic-light {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+        
+        .light {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px;
+            transition: background-color 1s;
+        }
+        
+        .red {
+            background-color: #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+        
+        .yellow {
+            background-color: #ffff00;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+        }
+        
+        .green {
+            background-color: #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-light">
+        <div id="red" class="light red"></div>
+        <div id="yellow" class="light yellow"></div>
+        <div id="green" class="light green"></div>
+    </div>
+
+    <script>
+        let red = document.getElementById('red');
+        let yellow = document.getElementById('yellow');
+        let green = document.getElementById('green');
+        let currentColor = 'red';
+
+        function changeColor() {
+            if (currentColor === 'red') {
+                red.style.backgroundColor = '      
+                red.style.boxShadow = 'none';
+                yellow.style.backgroundColor = '#ffff00';
+                yellow.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
+                currentColor = 'yellow';
+            } else if (currentColor === 'yellow') {
+                yellow.style.backgroundColor = '      
+                yellow.style.boxShadow = 'none';
+                green.style.backgroundColor = '#00ff00';
+                green.style.boxShadow = '0 0 20px rgba(0, 255, 0, 0.5)';
+                currentColor = 'green';
+            } else if (currentColor === 'green') {
+                green.style.backgroundColor = '      
+                green.style.boxShadow = 'none';
+                red.style.backgroundColor = '#ff0000';
+                red.style.boxShadow = '0 0 20px rgba(255, 0, 0, 0.5)';
+                currentColor = 'red';
+            }
+        }
+
+        setInterval(changeColor, 3000);
+    </script>
+</body>
+</html>
