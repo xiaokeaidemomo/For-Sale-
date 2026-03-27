@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Collection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .caption {
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Anime Collection</h1>
+  <div class="gallery">
+    <div class="card">
+      <img src="anime1.jpg" alt="Anime Posters Set 1">
+      <div class="caption">Anime Posters Collection (Set 1)</div>
+    </div>
+    <div class="card">
+      <img src="anime2.jpg" alt="Anime Posters Set 2">
+      <div class="caption">Anime Posters Collection (Set 2)</div>
+    </div>
+    <div class="card">
+      <img src="anime3.jpg" alt="Anime Files">
+      <div class="caption">Anime Clear File Collection</div>
+    </div>
+  </div>
+</body>
+</html>
 
